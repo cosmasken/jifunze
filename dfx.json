@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "jifunze_backend": {
+      "main": "src/jifunze_backend/main.mo",
+      "type": "motoko"
+    },
+    "jifunze_frontend": {
+      "dependencies": [
+        "jifunze_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/jifunze_frontend/src/index.html"
+      },
+      "source": [
+        "src/jifunze_frontend/assets",
+        "dist/jifunze_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
