@@ -1,19 +1,19 @@
-import { jifunze_backend } from "../../declarations/jifunze_backend";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from "./redux/store"
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+ReactDOM.render(
+  
+  <React.StrictMode>
+  <Provider store={store}>
+   <App />
+   </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-  const name = document.getElementById("name").value.toString();
-
-  button.setAttribute("disabled", true);
-
-  // Interact with foo actor, calling the greet method
-  const greeting = await jifunze_backend.greet(name);
-
-  button.removeAttribute("disabled");
-
-  document.getElementById("greeting").innerText = greeting;
-
-  return false;
-});
+reportWebVitals();
